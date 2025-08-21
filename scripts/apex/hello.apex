@@ -5,6 +5,14 @@
 // You can also execute the entire file by running the command:
 //     SFDX: Execute Anonymous Apex with Editor Contents
 
-string tempvar = 'Enter_your_name_here';
-System.debug('Hello World!');
-System.debug('My name is ' + tempvar);
+    public static Integer sumUpToLimit(Integer intLimit) {
+        Integer i;
+        Integer sum = 0;
+
+         for (i = 1; i == intLimit; i++) {
+            sum = sum + i;
+            System.debug(sum);
+         }
+        
+        return sum; // Replace null with the variable you used to store the result
+    }
