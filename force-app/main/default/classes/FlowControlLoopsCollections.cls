@@ -45,10 +45,8 @@ public with sharing class FlowControlLoopsCollections {
      * @return true if the person is eligible to vote, false otherwise.
      */
     public static Boolean votingEligibility(Integer age) {
-        if(age >= 18) {
-            return true;
-        }
-        return false; // Replace null with the variable you used to store the result
+
+        return age >= 18; // Replace null with the variable you used to store the result
     }
 
     /**
@@ -109,7 +107,7 @@ public with sharing class FlowControlLoopsCollections {
     public static String checkEvenOdd(Integer a) {
         if(a == null) {
             return null;
-        } else if(math.mod(a, 2) == 1) {
+        } else if(Math.mod(a, 2) == 1) {
             return 'Odd';
         }
         return 'Even'; // Replace null with the variable you used to store the result
@@ -143,19 +141,15 @@ public with sharing class FlowControlLoopsCollections {
      * @param score The score.
      * @return The grade for the given score.
      */
-    public static String determineGrade(Integer score) {
-        if(score >= 90) {
-            return 'A';
-        } else if(score >= 80) {
-            return 'B';
-        } else if(score >= 70) {
-            return 'C';
-        } else if(score >= 60) {
-            return 'D';
-        }
+public static String determineGrade(Integer score) {
+    if(score >= 90) return 'A';
+    if(score >= 80) return 'B';
+    if(score >= 70) return 'C';
+    if(score >= 60) return 'D';
 
-        return 'F'; // Replace null with the variable you used to store the result
-    }
+    return 'F'; // Replace null with the variable you used to store the result
+    
+}
 
 
     /**
@@ -364,8 +358,9 @@ public with sharing class FlowControlLoopsCollections {
         Decimal sum = 0.0;
 
         for(Decimal a : moneyInWallet) {
-            if(sum < 40.0) {
-                sum += a;
+            sum += a;
+            if(sum > 40.0) {
+                break;
             }
         }
 
@@ -422,14 +417,14 @@ public with sharing class FlowControlLoopsCollections {
         empMap.put('Alice Johnson', 65000);
 
         // Get the salary of the employee
-        Integer salary = 0;
+        Integer employeeSalary = 0;
         if(empMap.get(employeeName) == null) {
             return null;
         }
-        salary = empMap.get(employeeName);
+        employeeSalary = empMap.get(employeeName);
 
         // Return the salary of the employee, or null if the employee is not found in the Map
-        return salary; // Replace null with the variable you used to store the result
+        return employeeSalary; // Replace null with the variable you used to store the result
     }
 
     /**
